@@ -1,0 +1,158 @@
+/* --- General --- */
+
+* {
+    box-sizing: border-box; /* Aplica el modelo de caja border-box a todos los elementos */
+}
+
+html, body {
+    background-color: #dad4de;  /* Fondo general suave */
+    margin: 5px;  /* Espaciado externo mínimo */
+    padding: 5px;  /* Espaciado interno mínimo */
+    font-size: 30px; /* Tamaño base grande para el texto */
+    font-family: 'Roboto', sans-serif;  /* Fuente texto */
+    scroll-behavior: smooth;  /* Desplazamiento suave al hacer scroll */
+    color: #333;  /* Color de texto */
+}
+
+body {
+    margin-top: 60px; /* Separación para nav fija */
+}
+
+/* --- Barra de navegación --- */
+
+nav {  /* Estilos generales de la barra de navegación */
+    position: fixed;   /* Fija la barra en la parte superior */
+    background-color: #901653;  /* Color del fondo */
+    font-size: 20px; /* Tamaño de fuente más pequeño que el general */
+    width: 100%;   /* Ocupa todo el ancho de la ventana */
+    height: 50px;  /* Altura fija */
+    top: 0;  /* Alineación en la parte superior */
+    left: 0;   /* Se quede a la izquierda */
+    z-index: 10;   /* Se asegura de estar por encima de otros elementos */
+}
+
+nav ul {  /* elementos de la barra de navegación */
+    display: flex;              /* Muestra los elementos en fila */
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    align-items: center;       /* Centra verticalmente */
+    height: 100%;              /* Ocupa toda la altura del nav */
+    margin: 0;                 /* Elimina margen por defecto */
+    padding: 0 20px;           /* Espaciado horizontal interno */
+}
+
+nav ul li {  /* Estilo para cada elemento de la barra de navegación */
+    list-style: none;   /* Elimina viñetas */
+    margin-left: 45px;   /* Espacio entre elementos */
+}
+
+nav ul li a { /* Enlaces dentro de los elementos de navegación */
+     color: black;  /* Color del texto */
+    text-decoration: none;   /* Sin subrayado */
+}
+
+/* --- Menú desplegable --- */
+
+nav ul li.desplegable {
+    position: relative;  /* Posicionamiento relativo para anclar el submenú */
+}
+
+nav ul li.desplegable .menu {
+    display: none;   /* Oculto inicialmente */
+    position: absolute;  /* Posición absoluta respecto al contenedor */
+    top: 100%;    /* Aparece justo debajo del ítem principal */
+    right: 0;    /* Alineado a la derecha */
+    background-color: #901653; /* Mismo color que el nav */
+    min-width: 220px;    /* Ancho mínimo */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    z-index: 999;   /* Por encima de otros elementos */
+    border-radius: 4px;   /* Bordes redondeados */
+}
+
+nav ul li.desplegable:hover .menu { /* Muestra el menú al pasar el ratón */
+    display: block;  /* Muestra el submenú */
+}
+
+nav ul li.desplegable .menu li {
+    margin: 0;   /* Sin margen adicional */
+}
+
+nav ul li.desplegable .menu li a {   /* Enlaces dentro del menú desplegable */
+    display: block;     /* Ocupa todo el ancho */
+    padding: 10px 15px;    /* Espaciado interno */
+    text-decoration: none;   /* Sin subrayado */
+    color: black;    /* Color del texto */
+    font-size: 18px;   /* Tamaño más pequeño que el principal */
+}
+
+nav ul li.desplegable .menu li a:hover {   /* Efecto al pasar el ratón sobre los enlaces del submenú */
+    background-color: #901653;  /* Color de fondo igual que barra de navegación */
+}
+
+/* --- Logo --- */
+
+.logotitle {   /* Contenedor del logo principal y título */
+        display: flex;   /* Flexbox para alinear contenido */
+    flex-direction: column;  /* Apila elementos en columna */
+    align-items: center;   /* Centrado horizontal */
+    margin: 5px 0 5px 0;   /* Margen superior e inferior pequeño */
+    text-align: center;    /* Centra el texto */
+}
+
+.imglogo {  /* Imagen del logo principal */
+    width: 800px;   /* Ancho fijo grande */
+    height: auto;   /* Mantiene proporción */
+    margin-top: 5px;   /* Espaciado superior */
+    display: block;   /* Evita espacios por inline */
+}
+
+.logotitle2 {  /* Contenedor para el segundo logo o título */
+      display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;   /* Margen vertical más amplio */
+    text-align: center;
+}
+
+.imglogo2 {  /* Imagen del segundo logo */
+   width: 400px;  /* Ancho más pequeño */
+    height: auto;
+    margin-top: 5px;
+    display: block;
+}
+
+/* --- Estilo común para secciones tipo div --- */
+
+.info,  /* Secciones con estilo visual unificado */
+.titleDash,
+#almacenamiento,
+#estadosistema,
+#recursossistema,
+#infored,
+#tituloCheck,
+#interfacesRed {
+      background-color: #f1edf4; /* Color de fondo */
+    border-radius: 15px;  /* Bordes redondeados */
+    padding: 25px;  /* Espaciado interno */
+    margin: 60px 5px;  /* Margen vertical amplio, horizontal pequeño */
+    width: calc(100% - 10px);  /* Casi todo el ancho del contenedor */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);  /* Sombra ligera */
+}
+
+/* --- Títulos centrados --- */
+
+.titleDash h2,
+#tituloCheck h2,
+.info h3 {
+   margin: 0;  /* Elimina márgenes predeterminados */
+    text-align: center;  /* Centrado horizontal */
+    font-size: 36px;   /* Tamaño destacado */
+    color: #901653;  /* Color granate coherente con el nav */
+}
+
+/* --- Línea divisoria --- */
+
+.divider {  /* Líneas separadoras */
+   border: none;   /* Elimina borde predeterminado */
+    border-top: 2px solid rgba(0, 0, 0, 0.15);  /* Línea superior tenue */
+    margin: 20px 0;    /* Separación vertical */
+}
